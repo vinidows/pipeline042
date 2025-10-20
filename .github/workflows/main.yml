@@ -7,6 +7,10 @@ jobs:
   CI:
     runs-on: ubuntu-latest
     steps:
+
+    - name: Debug - Check Username Accessibility
+      run: echo "Attempting login as user: ${{ secrets.DOCKERHUB_USERNAME }}"
+      
     - name: Checkout do codigo
       uses: actions/checkout@v5.0.0
     - name: Login to Docker Hub
