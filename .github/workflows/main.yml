@@ -39,7 +39,8 @@ jobs:
       with:
         manifests: |
             ./k8s/deployment.yaml
-        images: vinidows/pipeline041:v${{ github.run_number }}
+        images: |
+          vinidows/pipeline041:v${{ github.run_number }}
 
 
         
