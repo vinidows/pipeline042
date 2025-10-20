@@ -14,6 +14,15 @@ jobs:
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
+    - name: builda da imagem
+      uses: docker/build-push-action@v5.3.0
+      with:
+        context: ./src
+        file: ./src/Dockerfile
+        push: true
+        tags: | vinidows/pipeline041:v${{ github.run_number }}
+                vinidows/pipeline041:latest
+        
 
       
   
