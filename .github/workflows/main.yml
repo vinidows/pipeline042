@@ -20,7 +20,8 @@ jobs:
         context: ./src
         file: ./src/Dockerfile
         push: true
-        tags: | vinidows/pipeline041:v${{ github.run_number }}
+        tags: | 
+                vinidows/pipeline041:v${{ github.run_number }}
                 vinidows/pipeline041:latest
         
 
