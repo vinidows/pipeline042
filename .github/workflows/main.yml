@@ -3,15 +3,6 @@ on:
   push:
     branches: ["main"]
   workflow_dispatch:
-    inputs:
-        versao:
-          type: string
-          required: true
-          description: "Versão da release"
-        fazer_deploy:
-          type: boolean
-          required: true 
-          description: "Deve fazer o deploy ou não"
 jobs:
   CI:
     runs-on: ubuntu-latest
