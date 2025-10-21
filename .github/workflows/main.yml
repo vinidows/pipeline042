@@ -1,13 +1,8 @@
 name: Pipeline
 on:
-  pull_request:
+  push:
     branches: ["main"]
   workflow_dispatch:
-    inputs:
-      Deploy:
-        type: boolean
-        description: "Deseja que faça deploy?"
-        required: true
 jobs:
   CI:
     runs-on: ubuntu-latest
