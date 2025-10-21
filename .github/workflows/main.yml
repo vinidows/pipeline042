@@ -19,7 +19,7 @@ jobs:
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
-    - name: builda da imagem
+    - name: build da image
       uses: docker/build-push-action@v5.3.0
       with:
         context: ./src
