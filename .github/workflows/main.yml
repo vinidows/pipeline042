@@ -32,7 +32,7 @@ jobs:
     needs: [CI]
     uses: vinidows/pipeline042/.github/workflows/deploy.yml@main
     with:
-      manifests: k8s/deployment.yml
+      manifests: k8s/deployment.yaml
       images: vinidows/pipeline042:v${{ github.run_number }}
     secrets: inherit
 
