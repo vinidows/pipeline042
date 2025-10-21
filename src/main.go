@@ -8,7 +8,7 @@ import (
 
 func index(w http.ResponseWriter, r *http.Request) {
 
-	w.Header().Set("Content-Type", "text/plain")
+	w.Header().Set("Content-Type", "text/plain; charset=utf-8") // Adicionei charset para melhor compatibilidade
 	fmt.Fprintf(w, "No mar da nuvem, onde o código a bailar, Kubernetes surge, para orquestrar. Um mestre timoneiro, com poder e precisão, A gerir contêineres, em vasta imensidão.
 
 Do Pod que nasce, a menor unidade, À Deployment que garante estabilidade. O ReplicaSet zelando pelo número certo, De instâncias ativas, mantendo o concerto.
@@ -21,7 +21,7 @@ Do YAML que escrevo, a regra e o querer, Ele o traduz em ação, faz o serviço 
 
 Seja stateless, seja o StatefulSet a mandar, Dados persistentes ele sabe guardar. Volumes e Secrets, ConfigMaps no lugar, A essência da app, ele sabe configurar.
 
-Com escala elástica, cresce e pode encolher, Segundo a demanda, para não se exceder. Em cada cluster, um universo a operar, A magia do K8s, a nos fascinar."")
+Com escala elástica, cresce e pode encolher, Segundo a demanda, para não se exceder. Em cada cluster, um universo a operar, A magia do K8s, a nos fascinar.")
 }
 
 func main() {
