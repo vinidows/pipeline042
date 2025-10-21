@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: web
-        image: vinidows/pipeline041
+        image: vinidows/pipeline042
         ports:
         - containerPort: 5000
 --- 
