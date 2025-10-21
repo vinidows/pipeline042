@@ -12,7 +12,7 @@ on:
                 description: "Images que serão alterado no manifesto"
 
 jobs:
-     Deploy-k8s:
+    Deploy-k8s:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout do codigo
