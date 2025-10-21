@@ -26,8 +26,8 @@ jobs:
         file: ./src/Dockerfile
         push: true
         tags: | 
-                vinidows/pipeline041:v${{ github.run_number }}
-                vinidows/pipeline041:latest
+                vinidows/pipeline042:v${{ github.run_number }}
+                vinidows/pipeline042:latest
   CD:
     runs-on: ubuntu-latest
     needs: [CI]
