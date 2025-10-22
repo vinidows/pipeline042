@@ -46,7 +46,7 @@ jobs:
       manifests: k8s/deployment.yaml
       images: |
         vinidows/pipeline042:v${{ github.run_number }}
-        environment: producao
+      environment: producao
     secrets: inherit    
 
 
