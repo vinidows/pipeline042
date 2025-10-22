@@ -9,7 +9,7 @@ import (
 func index(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8") // Adicionei charset para melhor compatibilidade
-	fmt.Fprintf(w, "Aplicação com sucesso foi deployada meu caro.")
+	fmt.Fprintf(w, "Aplicação 2.2V.")
 }
 
 func main() {
