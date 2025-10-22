@@ -31,7 +31,8 @@ Configs K8s: Arquivos de manifesto YAML
 ├── [Opcional] Dockerfile   # Arquivo de construção da imagem da aplicação
 └── README.md
 
-⚙️ Pré-requisitosPara que o pipeline funcione e para gerenciar o cluster manualmente, os seguintes itens são necessários:DigitalOcean Account e Kubernetes Cluster (DOKS) criado.Registro de Contêiner (ex: Docker Hub ou DigitalOcean Container Registry).Ferramentas de linha de comando: kubectl e doctl.🔑 Configuração de Segredos (GitHub Secrets)O pipeline do GitHub Actions depende dos seguintes segredos (Secrets) configurados nas Settings do seu repositório para acessar a DigitalOcean e o Kubernetes:Nome do SegredoDescriçãoDO_ACCESS_TOKENToken de Acesso Pessoal da DigitalOcean com permissão para gerenciar K8s.DOCKER_USERNAMEUsuário do seu Registro de Contêiner.DOCKER_PASSWORDSenha ou Token de Acesso do seu Registro de Contêiner.KUBE_CONFIG_BASE64O conteúdo do seu arquivo kubeconfig do DOKS, codificado em Base64.
+⚙️ Pré-requisitosPara que o pipeline funcione e para gerenciar o cluster manualmente, os seguintes itens são necessários:DigitalOcean Account e Kubernetes Cluster (DOKS) criado.Registro de Contêiner (ex: Docker Hub ou DigitalOcean Container Registry).Ferramentas de linha de comando: kubectl e doctl.
+🔑 Configuração de Segredos (GitHub Secrets)O pipeline do GitHub Actions depende dos seguintes segredos (Secrets) configurados nas Settings do seu repositório para acessar a DigitalOcean e o Kubernetes:Nome do SegredoDescriçãoDO_ACCESS_TOKENToken de Acesso Pessoal da DigitalOcean com permissão para gerenciar K8s.DOCKER_USERNAMEUsuário do seu Registro de Contêiner.DOCKER_PASSWORDSenha ou Token de Acesso do seu Registro de Contêiner.KUBE_CONFIG_BASE64O conteúdo do seu arquivo kubeconfig do DOKS, codificado em Base64.
 
 📦 Deploy (CI/CD)
 O processo de deploy é disparado por meio do GitHub Actions a cada push na branch principal (main).
