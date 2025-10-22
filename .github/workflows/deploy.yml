@@ -10,10 +10,15 @@ on:
                 type: string
                 required: true
                 description: "Images que serão alterado no manifesto"
+            environment:
+                type: string
+                required: true
+                description: "nome do ambiente"
 
 jobs:
     Deploy-k8s:
       runs-on: ubuntu-latest
+      environment: ${{ inputs.environment }}
       steps:
       - name: Checkout do codigo
         uses: actions/checkout@v5.0.0      
@@ -27,3 +32,4 @@ jobs:
         with:
           manifests: ${{ inputs.manifests }}
           images: ${{ inputs.images }}
+          namespace: ${{ vars.APP_NAMESPACE }}

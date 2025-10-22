@@ -1,7 +1,6 @@
 name: Pipeline
 on:
   push:
-    branches: ["main"]
   workflow_dispatch:
 jobs:
   CI:
@@ -23,13 +22,32 @@ jobs:
         tags: | 
                 vinidows/pipeline042:v${{ github.run_number }}
                 vinidows/pipeline042:latest
-  CD:
+  CD-homologacao:
     needs: [CI]
     uses: vinidows/pipeline042/.github/workflows/deploy.yml@main
     with:
       manifests: k8s/deployment.yaml
-      images: vinidows/pipeline042:v${{ github.run_number }}
+      images: |
+        vinidows/pipeline042:v${{ github.run_number }}
+        environment: homologacao
     secrets: inherit
+
+  Teste-Ambiente:
+    needs: [CD-homologacao]  
+    runs-on: ubuntu-latest
+    steps:
+      - name: fake teste
+        run: echo "teste realizado ${{ vars.APP_NAMESPACE }}"
+
+  CD-producao:
+    needs: [teste-ambiente]
+    uses: vinidows/pipeline042/.github/workflows/deploy.yml@main
+    with:
+      manifests: k8s/deployment.yaml
+      images: |
+        vinidows/pipeline042:v${{ github.run_number }}
+        environment: producao
+    secrets: inherit    
 
 
         
